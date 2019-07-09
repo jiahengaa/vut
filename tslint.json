@@ -1,0 +1,37 @@
+{
+  "defaultSeverity": "warning",
+  "extends": ["tslint:recommended"],
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  },
+  "rules": {
+    "quotemark": [true, "single"],
+    "indent": [true, "spaces", 4],
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "member-access": false,
+    "forin": false,
+    "no-shadowed-variable": false,
+
+    "semicolon": [false, "always"],
+    "space-before-function-paren": ["off", "never"],
+    // "standard/computed-property-even-spacing": "off",
+
+    "no-console": false,
+    "trailing-comma": [
+      false,
+      {
+        "multiline": {
+          "objects": "always",
+          "arrays": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        },
+        "esSpecCompliant": true
+      }
+    ],
+    "arrow-parens": [true, "ban-single-arg-parens"]
+  }
+}
