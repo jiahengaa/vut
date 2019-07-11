@@ -26,7 +26,6 @@ export default class VTCheckbox extends Vue {
 
   private onChecked(event: MouseEvent) {
     this.ischeck = !this.ischeck
-    console.log(this.ischeck)
     this.vtIcon.iconName = 'icon-square' + (this.ischeck ? 'check' : '')
   }
 
