@@ -9,6 +9,7 @@
         <i>footer content</i>
       </template>
     </render-hello>
+    <vt-icon name="icon-squarecheck"></vt-icon>
   </div>
 </template>
 
@@ -16,11 +17,13 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
 import RenderHello from '../views/RenderHello'
+import VTIcon from '@/components/VTIcon'
 
 @Component({
   name: 'home',
   components: {
-    'render-hello': RenderHello
+    'render-hello': RenderHello,
+    'vt-icon': VTIcon
   }
 })
 export default class Home extends Vue {}
@@ -29,5 +32,9 @@ export default class Home extends Vue {}
 <style lang="scss" scoped>
 .home {
   display: flex;
+}
+.vt-icon {
+  border-width: 1px;
+  border-color: aquamarine;
 }
 </style>
