@@ -10,7 +10,7 @@
       </template>
     </render-hello>
     <vt-icon name="icon-squarecheck"></vt-icon>
-    <vt-checkbox text="ssss" :ischeck="ischecked"></vt-checkbox>
+    <vt-checkbox text="ssss" :ischeck="ischecked">haihaihai</vt-checkbox>
   </div>
 </template>
 

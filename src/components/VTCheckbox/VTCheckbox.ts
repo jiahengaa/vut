@@ -7,6 +7,8 @@ import '@/assets/Iconfont/vt-iconfont.css'
 
 import VTIcon from '../VTIcon/VTIcon'
 
+import './VTCheckbox.scss'
+
 @Component({
   name: 'VTCheckbox',
   components: {
@@ -45,8 +47,25 @@ export default class VTCheckbox extends Vue {
         ['click']: this.onChecked
       }
     })
-    const body = this.$slots.default === undefined ? createElement('div', this.text) : createElement('')
+    let body: any
+    if (this.$slots.default === undefined) {
+      body = createElement(
+        'div',
+        {
+          class: 'text'
+        },
+        this.text
+      )
+    } else {
+      body = this.$slots.default[0]
+    }
 
-    return createElement('div', {}, [checkbox, body])
+    return createElement(
+      'div',
+      {
+        class: 'vt-checkbox'
+      },
+      [checkbox, body]
+    )
   }
 }

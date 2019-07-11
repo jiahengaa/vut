@@ -1,0 +1,10 @@
+.vt-checkbox {
+  display: flex;
+  align-items: center;
+  height: 28px;
+  font-size: 18px;
+
+  .text {
+    align-self: stretch;
+  }
+}
