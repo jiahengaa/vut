@@ -7,6 +7,7 @@
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import '@/assets/Iconfont/iconfont'
 
 @Component({
   name: 'App'
