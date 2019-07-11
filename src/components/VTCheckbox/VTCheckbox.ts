@@ -23,18 +23,21 @@ export default class VTCheckbox extends Vue {
 
   public ischeck: boolean = false
 
+  public checkedImageName: string = 'icon-squarecheck'
+  public uncheckedImageName: string = 'icon-square'
+
   @Ref('vtIcon')
   public vtIcon!: VTIcon
 
   private onChecked(event: MouseEvent) {
     this.ischeck = !this.ischeck
-    this.vtIcon.iconName = 'icon-square' + (this.ischeck ? 'check' : '')
+    this.vtIcon.iconName = this.ischeck ? this.checkedImageName : this.uncheckedImageName
   }
 
   private mounted() {
     // this.vtIcon.$on('click', this.onChecked) //失败
     // this.vtIcon.$on('nativeOn.click', this.onChecked) //失败
-    this.vtIcon.iconName = 'icon-square' + (this.ischeck ? 'check' : '')
+    this.vtIcon.iconName = this.ischeck ? this.checkedImageName : this.uncheckedImageName
   }
 
   private render(createElement: CreateElement, hack: RenderContext<Props>): VNode {
