@@ -10,6 +10,7 @@
       </template>
     </render-hello>
     <vt-icon name="icon-squarecheck"></vt-icon>
+    <vt-checkbox text="ssss" :ischeck="ischecked"></vt-checkbox>
   </div>
 </template>
 
@@ -17,16 +18,20 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { Getter, Action } from 'vuex-class'
 import RenderHello from '../views/RenderHello'
-import VTIcon from '@/components/VTIcon'
+import VTIcon from '@/components/VTIcon/VTIcon'
+import VTCheckbox from '@/components/VTCheckbox/VTCheckbox'
 
 @Component({
   name: 'home',
   components: {
     'render-hello': RenderHello,
-    'vt-icon': VTIcon
+    'vt-icon': VTIcon,
+    'vt-checkbox': VTCheckbox
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  public ischecked: boolean = false
+}
 </script>
 
 <style lang="scss" scoped>

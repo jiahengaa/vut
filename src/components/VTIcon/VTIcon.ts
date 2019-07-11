@@ -3,8 +3,6 @@ import Vue, { CreateElement, RenderContext } from 'vue'
 import { VNode, VNodeData, VNodeChildren, NormalizedScopedSlot } from 'vue/types/vnode'
 import { DefaultProps as Props } from 'vue/types/options'
 import { Colors } from '@/theme/colors'
-import './VTIcon.scss'
-
 import '@/assets/Iconfont/vt-iconfont.css'
 
 @Component({
@@ -12,13 +10,21 @@ import '@/assets/Iconfont/vt-iconfont.css'
 })
 export default class VTIcon extends Vue {
   @Prop()
-  name?: string
+  name: string | undefined
 
-  private readonly vtIconPre = 'vt-iconfont'
+  public iconName: any = ''
 
-  public render(createElement: CreateElement, hack: RenderContext<Props>): VNode {
+  public created() {
+    this.iconName = this.name
+  }
+
+  private mounted() {
+    // this.iconName = this.name
+  }
+
+  private render(createElement: CreateElement, hack: RenderContext<Props>): VNode {
     const vndata: VNodeData = {
-      class: 'vt-iconfont ' + this.name
+      class: 'vt-iconfont ' + this.iconName
     }
     return createElement('i', vndata, [])
   }
